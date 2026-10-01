@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduManage | Student Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="loginScreen" class="login-screen">
+    <div class="login-brand">
+      <div class="brand-mark">E</div>
+      <div>
+        <h1>EduManage</h1>
+        <p>Student Management System</p>
+      </div>
+    </div>
+    <div class="login-card">
+      <div class="login-heading">
+        <span class="eyebrow">ADMIN PORTAL</span>
+        <h2>Welcome back</h2>
+        <p>Sign in to manage your institution.</p>
+      </div>
+      <form id="loginForm">
+        <label>Username
+          <input id="username" type="text" placeholder="Enter username" required autocomplete="username">
+        </label>
+        <label>Password
+          <div class="password-wrap">
+            <input id="password" type="password" placeholder="Enter password" required autocomplete="current-password">
+            <button type="button" id="togglePassword" class="icon-btn" aria-label="Show password">◉</button>
+          </div>
+        </label>
+        <div class="login-row">
+          <label class="check"><input id="rememberMe" type="checkbox"> Remember me</label>
+          <span class="demo-hint">Demo: admin / admin123</span>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">Sign in <span>→</span></button>
+        <div id="loginError" class="form-error"></div>
+      </form>
+    </div>
+    <div class="login-footer">© 2026 EduManage · Professional Academic Administration</div>
+  </div>
+
+  <div id="app" class="app hidden">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">E</div>
+        <div><strong>EduManage</strong><small>Student System</small></div>
+      </div>
+      <nav class="nav">
+        <button class="nav-item active" data-section="dashboard"><span>⌂</span>Dashboard</button>
+        <button class="nav-item" data-section="students"><span>♙</span>Students</button>
+        <button class="nav-item" data-section="attendance"><span>✓</span>Attendance</button>
+        <button class="nav-item" data-section="marks"><span>▤</span>Marks & Results</button>
+        <button class="nav-item" data-section="courses"><span>▦</span>Courses</button>
+        <button class="nav-item" data-section="fees"><span>₹</span>Fees</button>
+        <button class="nav-item" data-section="reports"><span>▥</span>Reports</button>
+        <button class="nav-item" data-section="settings"><span>⚙</span>Settings</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><strong>Need help?</strong><p>Use the quick actions or open Settings.</p></div>
+        <button class="nav-item logout" id="logoutBtn"><span>↪</span>Logout</button>
+      </div>
+    </aside>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <main class="main">
+      <header class="topbar">
+        <div class="top-left">
+          <button id="menuBtn" class="icon-btn menu-btn">☰</button>
+          <div><div class="breadcrumb">Admin / <strong id="pageTitle">Dashboard</strong></div></div>
+        </div>
+        <div class="top-actions">
+          <div class="global-search"><span>⌕</span><input id="globalSearch" placeholder="Search students..."></div>
+          <button class="icon-btn notification-btn" id="notificationBtn">🔔<i></i></button>
+          <div class="profile-mini"><div class="avatar">AD</div><div><strong>Admin</strong><small>Administrator</small></div></div>
+        </div>
+      </header>
+
+      <div class="content">
+        <section id="dashboard" class="section active"></section>
+        <section id="students" class="section"></section>
+        <section id="attendance" class="section"></section>
+        <section id="marks" class="section"></section>
+        <section id="courses" class="section"></section>
+        <section id="fees" class="section"></section>
+        <section id="reports" class="section"></section>
+        <section id="settings" class="section"></section>
+      </div>
+    </main>
+  </div>
+
+  <div id="modalRoot"></div>
+  <div id="toastRoot" class="toast-root"></div>
+  <script src="script.js"></script>
+</body>
+</html>
